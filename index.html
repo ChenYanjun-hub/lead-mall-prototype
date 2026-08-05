@@ -29,7 +29,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 /* ───── 外壳 ───── */
 .wrap{max-width:1300px;margin:0 auto;padding:0 24px 70px}
-.masthead{padding:40px 0 24px;border-bottom:1px solid var(--page-line)}
+.masthead{padding:30px 0 18px;border-bottom:1px solid var(--page-line)}
+.rail{max-width:700px}
+/* 交付说明卡：置于右栏顶部，不占手机上方高度 */
+.brief{background:var(--page2);border:1px solid var(--page-line);border-radius:14px;padding:20px 22px;margin-bottom:20px}
+.brief h2{font-size:15.5px;color:#fff;font-weight:700;margin:0}
+.brief .bsec{margin-top:15px}
+.brief .bk{font-size:10.5px;letter-spacing:.16em;color:#6B7280;font-weight:700;margin-bottom:6px}
+.brief p{font-size:13px;line-height:1.85;color:#98A0AC;margin:0}
+.brief b{color:#FFB088;font-weight:600}
+.brief ul{margin:0;padding-left:16px}
+.brief li{font-size:12.5px;line-height:1.75;color:#98A0AC;margin-bottom:6px}
 .eyebrow{font-size:11.5px;letter-spacing:.22em;color:#6B7280;text-transform:uppercase;font-weight:700}
 .masthead h1{font-size:28px;font-weight:800;letter-spacing:-.02em;margin:11px 0 12px;color:#fff}
 .thesis{max-width:800px;font-size:14.5px;color:#98A0AC}
@@ -527,16 +537,12 @@ html,body{overflow-x:hidden}
   <div class="eyebrow">头等仓 · 微信小程序 · 可交互高保真原型</div>
   <h1>线索商城：从"卖曝光"到"卖确定性"</h1>
   <p class="thesis">
-    现有产品已经解决了<b>信任</b>——平台电话核实、通话逐字稿凭证、无效退积分。它也已经做了定价分层：
-    普通客户 50 / 大客户 100 / 超大客户 200 积分。但分档依据是客户规模，而成交收佣同样是面积的线性函数——
-    <b>两个价格用的是同一个维度，成交概率在整个定价模型里被当成了常数</b>。
-    本次改版的目标不是拉高认领率，而是<b>提升每积分的成交转化率</b>。
+    平台已经解决了"信任"，但没有解决"分辨"——<b>定价按客户规模分档，而成交概率在整个定价模型里被当成了常数</b>。
+    目标不是拉高认领率，而是提升每积分的成交转化率。
   </p>
   <div class="meta-row">
-    <span class="meta-pill">数据取自 2026-08-05 线上真实页面</span>
-    <span class="meta-pill">14 条线索 · 3 座城市</span>
-    <span class="meta-pill">筛选、排序、认领、扣分、跟进、退单全部可用</span>
-    <span class="meta-pill">分区 01 附全网检索的外部基准与来源</span>
+    <span class="meta-pill">数据取自 2026-08-05 线上真实页面 · 14 条线索 · 3 座城市</span>
+    <span class="meta-pill">筛选、排序、认领、扣分、跟进、退单全部可真实运行</span>
   </div>
 </header>
 
@@ -576,7 +582,28 @@ html,body{overflow-x:hidden}
       <button data-coach="1">重看新手引导</button>
     </div>
   </div>
-  <div class="notes" id="notes"></div>
+  <div class="rail">
+    <div class="brief">
+      <h2>这份交付是怎么来的</h2>
+      <div class="bsec">
+        <p>周二拿到题，周三一整天没有碰原型——先把业务弄明白：头等仓在工业与物流地产里靠什么赚钱；线索商城从平台自行获客、客服电话核实录音、上架为商品、到业主与经纪人用积分认领的闭环怎么转；付费的是谁、被交易的是谁；平台的收入函数里有没有"成交"这个变量。随后以经纪人身份把小程序的功能完整体验了一遍，记录卡点。原型是在这之后才开始画的。</p>
+      </div>
+      <div class="bsec">
+        <div class="bk">核心判断，一句话</div>
+        <p>平台已经解决了"信任"——电话核实、通话逐字稿凭证、无效退积分，这套机制在行业内领先。但它没有解决"分辨"：定价按客户规模分三档，而成交收佣同样是面积的线性函数，<b>两个价格用的是同一个维度，成交概率在整个定价模型里被当成了常数</b>。所以本次改版的目标不是拉高认领率，而是提升每积分的成交转化率。</p>
+      </div>
+      <div class="bsec">
+        <div class="bk">我的取舍</div>
+        <ul>
+          <li>小程序功能已完整体验，本次<b>只动线索商城</b>。租控表是成熟的现有功能，不在漏斗主路径上。</li>
+          <li>用户量与线索认领率<b>无任何公开披露</b>，全网检索已确认。相关推导改用汽车行业公开基准外推，交付中出现的任何精确数字都应视为待内部数据校准的占位值。</li>
+          <li>质量分的五维权重是拍的，需要用内部退单率数据做回归才能定。</li>
+          <li>原型优先保证漏斗主链路（列表 → 详情 → 认领 → 跟进 → 退单）可真实运行，次要页面为示意。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="notes" id="notes"></div>
+  </div>
 </div>
 
 <section class="analysis" id="a-model"><div class="notes">
