@@ -30,7 +30,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 /* ───── 外壳 ───── */
 .wrap{max-width:1300px;margin:0 auto;padding:0 24px 70px}
 .masthead{padding:30px 0 18px;border-bottom:1px solid var(--page-line)}
-.rail{max-width:700px}
+.rail{max-width:700px;min-width:0}
+/* 单列时手机外框(412px)会撑开栅格轨道，说明卡须自行收窄，否则右侧被裁 */
+@media(max-width:1020px){.rail,.brief{max-width:calc(100vw - 44px)}}
+@media(max-width:760px){.rail,.brief{max-width:calc(100vw - 28px)}}
 /* 交付说明卡：置于右栏顶部，不占手机上方高度 */
 .brief{background:var(--page2);border:1px solid var(--page-line);border-radius:14px;padding:20px 22px;margin-bottom:20px}
 .brief h2{font-size:15.5px;color:#fff;font-weight:700;margin:0}
