@@ -1461,7 +1461,7 @@ const STATUS = ['待联系','已联系','已带看','已成交','已战败'];
 const DEF = () => ({
   pts: 190, city:'上海', district:'全部', type:'全部', sort:'match',
   onlyMatch:false, onlyVerified:false, stack:[{r:'home'}], tab:'home',
-  claimed:{}, subs:[], subStores:[], onboard:0, notes:true, trOpen:false, packIdx:1,
+  claimed:{}, subs:[], subStores:[], onboard:0, notes:false, trOpen:false, packIdx:1,
 });
 let S = DEF();
 const cur = () => S.stack[S.stack.length - 1];

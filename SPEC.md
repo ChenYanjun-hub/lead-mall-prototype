@@ -378,7 +378,7 @@ const DEF = () => ({
   subs: [],                    // 已订阅行政区，元素形如 '上海普陀'
   subStores: [],               // 已订阅仓源 id
   onboard: 0,                  // 0=关闭，1/2/3=引导第 N 步
-  notes: true,                 // 说明面板开关
+  notes: false,                // 说明面板开关（默认收起，仅显示「可以试试」清单）
   trOpen: false,               // 逐字稿展开状态
   packIdx: 1,                  // 充值档位选中项
 });
